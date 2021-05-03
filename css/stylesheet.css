@@ -4,84 +4,110 @@
 }
 
 body{
-    background-color:#DBFFE5;
+    /*background-color:#DBFFE5;*/
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
 }
 
-nav{
-    width: 100%;
-    margin-top: 5px;
-}
-
-p{
-    margin: 0 20px;
-    text-align: justify;
-}
-
 a{
     text-decoration: none;
-    margin: auto;
-    text-align: center;
-
 }
+
 a:hover{
-    color: black;
-}
-
-a:visited{
     color:black;
 }
 
-.list{
-    margin-left: 20px;
-    margin-top:10px;
+a:visited{
+    color:black
 }
 
-article{
-    margin: 20px;
-    background-color: #3CAEA3;
-    border-radius: 10px;
-    box-shadow: 1px 2px;
-}
-
-section{
-    margin-left: 20px;
-}
-
-.title{
-    margin: 10px 0;
-    text-decoration: underline;
+h3{
     text-align: center;
-}
-
-
-.nav-button-container{
-    width: 345px;
-    margin: 0 auto;
-    border-radius: 20em;
-    background-color: #ACFFC9;
-}
-
-.nav-button{
-    display: inline-block;  
-    margin: 0 30px;
-}
-
-.nav-button-center-button{
-    border-left: 3px solid #DBFFE5;
-    border-right: 3px solid #DBFFE5;
-    padding: 0 20px;
-    display: inline-block;  
-
-}
-
-.fuente-link{
-    margin: 0 20px;
     text-decoration: underline;
 }
 
+.wrapper{
+    display: grid;
+    padding: 20px;
+    grid-template-areas: "header header header"
+                         "title-1 title-1 title-1"
+                         "def-1 def-2 def-3";
+    grid-gap: 20px;
+}
+
+.header{
+    grid-area: header;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.header a{
+    background-color: #FFCE97;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 5px;
+}
 
 
+.title-1{
+    grid-area: title-1;
+    text-align: center;
+    border-radius: 20px;
+}
 
+.def-1, .def-2, .def-3{
+    text-align: justify;
+}
+
+.def-1-container,
+.def-2-container,
+.def-3-container{
+    background-color: #FFCE97;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0px 2px 4px #000;
+    transition: 300ms;
+}
+
+.def-1-container:hover,
+.def-2-container:hover,
+.def-3-container:hover{
+    transform: translate(0,-10px);
+}
+
+.def-1-container a,
+.def-2-container a,
+.def-3-container a{
+    text-decoration: underline;
+}
+
+.def-1-container{
+    grid-area: def-1;
+}
+
+.def-1-container ul{
+    /*list-style-type: none;*/
+    padding-left: 20px;
+}
+
+.def-2-container{
+    grid-area: def-2;
+}
+
+.def-3-container{
+    grid-area: def-3;
+}
+
+@media screen and (max-width:768px){
+    .wrapper{
+        display: grid;
+        grid-template-areas: "header header header"
+                         "title-1 title-1 title-1"
+                         "def-1 def-1 def-1"
+                         "def-2 def-2 def-2"
+                         "def-3 def-3 def-3";
+    }
+}
 
